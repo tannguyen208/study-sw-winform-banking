@@ -1,0 +1,15 @@
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\bin\Debug\client.exe.config
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\bin\Debug\client.exe
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\bin\Debug\client.pdb
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\bin\Debug\Newtonsoft.Json.dll
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\bin\Debug\Newtonsoft.Json.xml
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.csprojResolveAssemblyReference.cache
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.history.resources
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.login.resources
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.main.resources
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.Properties.Resources.resources
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.transfer.resources
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.csproj.GenerateResource.Cache
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.csproj.CoreCompileInputs.cache
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.exe
+D:\Study\01.Softech\Sem-03\06 - API\ApiTutorialBank\client\obj\Debug\client.pdb

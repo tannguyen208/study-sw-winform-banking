@@ -19,7 +19,7 @@ namespace client
 
         async private void btnLogin_Click(object sender, EventArgs e)
         {
-            account acc = await functions.check(txtAccNo.Text);
+            account acc = await functions.checkLogin(txtAccNo.Text);
             if(acc != null)
             {
 

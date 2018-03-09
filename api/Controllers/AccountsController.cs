@@ -19,13 +19,13 @@ namespace api.Controllers
         private ApiTutorialsBankEntities db = new ApiTutorialsBankEntities();
 
 
-        // GET: api/Accounts/5
+        // GET: api/accounts/?accid=1&token=
         [ResponseType(typeof(Account))]
         public IHttpActionResult GetAccount([FromUri] int accid, [FromUri] string token)
         {
-            var acc = (from a in db.Accounts
-                       where a.Id == accid && 
-                             a.Token.Equals(token) && 
+            var acc = (from   a in db.Accounts
+                       where  a.Id == accid && 
+                              a.Token.Equals(token) && 
                              !a.Token.Equals("")
                        select a).FirstOrDefault();
             if (acc != null)
@@ -33,15 +33,46 @@ namespace api.Controllers
                 acc.Token = "";
                 db.SaveChanges();
 
-                return Ok();
+                return Ok(acc);
             }
             else
             {
                 return NotFound();
             }
-
-            return Ok(acc);
         }
+
+
+
+
+        // check
+        // GET: api/accounts/id_to?accid=1&token=
+        public IHttpActionResult GetAccount(string id, [FromUri] int accid, [FromUri] string token)
+        {
+
+            // string id : accno_to
+            var acc = (from a in db.Accounts
+                       where a.Id == accid &&
+                              a.Token.Equals(token) &&
+                             !a.Token.Equals("")
+                       select a).FirstOrDefault();
+
+            if (acc != null)
+            {
+                var acc_to = (from a in db.Accounts
+                                        where a.AccNo.Equals(id)
+                                        select new
+                                        {
+                                            a.Id,
+                                            a.AccName
+                                        }).FirstOrDefault();
+                return Ok(acc_to);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
 
 
 
@@ -55,11 +86,26 @@ namespace api.Controllers
             {
                 acc.LastLogin = DateTime.Now;
                 acc.Token = EncryptString(acc.LastLogin.Value.Ticks + acc.AccNo);
-                db.SaveChanges();
-            }
 
-            return Ok(acc);
+                db.SaveChanges();
+                var x = ( from a in db.Accounts
+                      where a.AccNo.Equals(account.AccNo)
+                      select new
+                      {
+                          a.Id,
+                          a.Balance,
+                          a.AccNo,
+                          a.Token,
+                          a.AccName
+                      }).SingleOrDefault();
+                return Ok(x);
+            }
+            else
+            {
+                return Ok(acc);
+            }
         }
+
 
 
 

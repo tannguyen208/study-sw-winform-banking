@@ -12,9 +12,16 @@ namespace client
 {
     public partial class history : Form
     {
-        public history()
+        account acc;
+        public history(account acc)
         {
             InitializeComponent();
+            this.acc = acc;
+        }
+
+        async private void history_Load(object sender, EventArgs e)
+        {
+            dgHistory.DataSource = await functions.history(acc);
         }
     }
 }

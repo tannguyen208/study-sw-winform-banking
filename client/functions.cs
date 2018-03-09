@@ -10,12 +10,12 @@ namespace client
 {
     public class functions
     {
-        static string url_acc = "http://localhost:12345/api/accounts";
-        static string url_trans = "http://localhost:12345/api/transactions";
+        static string url_acc = "http://localhost:51045/api/accounts";
+        static string url_trans = "http://localhost:51045/api/transactions";
 
 
         // check login
-        async public static Task<account> check(string acc_no) {
+        async public static Task<account> checkLogin(string acc_no) {
             try
             {
                 using(var client = new HttpClient())
@@ -57,6 +57,7 @@ namespace client
         }
 
 
+
         // transfer
         async public static Task<transection> transfer(account acc, int acc_to, int amount, string message )
         {
@@ -88,6 +89,28 @@ namespace client
                 return null;
             }
         }
+
+
+        // check account number
+        async public static Task<account> checkAcount(string acc_no_to, account acc)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    using (var res = await client.GetAsync(url_acc + "/" + acc_no_to +"?accid=" + acc.Id + "&token=" + acc.Token))
+                    {
+                        string json = await res.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<account>(json);
+                    }
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
 
     }
 }

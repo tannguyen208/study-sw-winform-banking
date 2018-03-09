@@ -41,7 +41,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 9);
+            this.label1.Location = new System.Drawing.Point(127, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 25);
             this.label1.TabIndex = 0;
@@ -69,19 +69,21 @@
             // 
             this.btnHistory.Location = new System.Drawing.Point(23, 113);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(97, 52);
+            this.btnHistory.Size = new System.Drawing.Size(206, 52);
             this.btnHistory.TabIndex = 3;
             this.btnHistory.Text = "History";
             this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(158, 113);
+            this.btnTransfer.Location = new System.Drawing.Point(275, 113);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(97, 52);
+            this.btnTransfer.Size = new System.Drawing.Size(210, 52);
             this.btnTransfer.TabIndex = 4;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // txtAcc
             // 
@@ -109,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 185);
+            this.ClientSize = new System.Drawing.Size(497, 185);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.txtBalance);

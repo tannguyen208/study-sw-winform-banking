@@ -27,7 +27,14 @@ namespace api.Controllers
             {
                 var list = from s in db.Transactions
                            where s.AccFrom == accid || s.AccTo == accid
-                           select s;
+                           select new {
+                               s.Id,
+                               s.TransDate,
+                               AccFrom = s.Account.AccName,
+                               AccTo = s.Account1.AccName,
+                               s.Amount,
+                               s.Message
+                           } ;
                 return Ok(list);
             }
             else

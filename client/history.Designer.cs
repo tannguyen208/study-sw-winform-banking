@@ -60,6 +60,7 @@
             this.Controls.Add(this.dgHistory);
             this.Name = "history";
             this.Text = "history";
+            this.Load += new System.EventHandler(this.history_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
